@@ -17,7 +17,7 @@ export class CircleApi {
   /**
    * Execute an API request to create a build on CircleCI for a project.
    *
-   * @returns a Promise which executes the build request and returns its response
+   * @returns a promise which executes the build request and returns its response
    */
   public createBuild (organization: string, project: string, buildParameters = {}, branch = 'master'): Promise<Response<string>> {
     const url = `${BASE_URL}/project/github/${organization}/${project}/tree/${branch}`
@@ -32,7 +32,7 @@ export class CircleApi {
   /**
    * Execute an API request to get build status on CircleCI for a project.
    *
-   * @returns a Promise which executes the build request and returns its response
+   * @returns a promise which executes the status request and returns its response
    */
   public getBuildDetails (organization: string, project: string, buildId: string): Promise<Response<string>> {
     const url = `${BASE_URL}/project/github/${organization}/${project}/${buildId}`
