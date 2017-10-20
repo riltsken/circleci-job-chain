@@ -70,4 +70,4 @@ async function main () {
   }, parseInt(pollInterval || '5000', 10))
 }
 
-await main()
+main().catch(console.log)
