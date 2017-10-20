@@ -8,6 +8,7 @@ const organization: string = cliArgs.organization
 const project: string = cliArgs.project
 const branch: string = cliArgs.branch
 const circleToken: string = cliArgs['circle-token']
+const pollInterval: string = cliArgs['poll-interval']
 // const buildOptions: any = cliArgs.buildOptions
 
 enum BuildOutcome {
@@ -66,7 +67,7 @@ async function main () {
         console.log(`Status currently is "${body.outcome}"`)
       }
     }
-  }, parseInt(process.env.CIRCLE_JOBCHAIN_POLLINTERVAL || '5000', 10))
+  }, parseInt(pollInterval || '5000', 10))
 }
 
 main()
