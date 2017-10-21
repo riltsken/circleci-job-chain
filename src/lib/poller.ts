@@ -5,8 +5,8 @@ export interface IOptions {
   project: string
   branch: string
   circleToken: string
-  pollInterval: string
-  buildOptions: any
+  pollInterval?: string
+  buildOptions?: any
 }
 
 export enum BuildOutcome {
@@ -15,7 +15,7 @@ export enum BuildOutcome {
   CANCELED = 'canceled'
 }
 
-export function handleError (error: any) {
+export function handleError (error: any, onFailure: Function) {
   if (error && error.statusCode) {
     console.log('**Something went wrong talking to CircleCI API. Exiting.**')
     console.log(error.url)
@@ -23,10 +23,12 @@ export function handleError (error: any) {
   } else {
     console.log(error.stack, error)
   }
-  process.exit(1)
+  onFailure()
 }
 
-export async function poller (options: IOptions) {
+export async function poller (options: IOptions,
+                              onSuccess: Function = () => { process.exit(0) },
+                              onFailure: Function = () => { process.exit(1) }) {
   const api = new CircleApi(options.circleToken)
   console.log(`Starting job for "${options.project}" on branch "${options.branch}".`)
   let response
@@ -37,7 +39,7 @@ export async function poller (options: IOptions) {
                                      options.buildOptions || {},
                                      options.branch)
   } catch (e) {
-    handleError(e)
+    handleError(e, onFailure)
     return
   }
 
@@ -51,7 +53,7 @@ export async function poller (options: IOptions) {
     try {
       response = await api.getBuildDetails(options.organization, options.project, buildId)
     } catch (e) {
-      handleError(e)
+      handleError(e, onFailure)
       return
     }
 
@@ -59,11 +61,13 @@ export async function poller (options: IOptions) {
     if (response.statusCode === 200) {
       if (body.outcome === BuildOutcome.SUCCESS) {
         console.log(`Job completed successfully. Exiting.`)
-        process.exit(0)
+        onSuccess()
+        return
       } else if (body.outcome === BuildOutcome.CANCELED ||
                  body.outcome === BuildOutcome.FAILED) {
         console.log(`Job failed or canceled. Exiting.`)
-        process.exit(1)
+        onFailure()
+        return
       } else {
         console.log(`Status currently is "${body.outcome}"`)
       }

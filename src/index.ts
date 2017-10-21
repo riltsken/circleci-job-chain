@@ -1,2 +1,2 @@
 export * from './lib/circle-api'
-export * from './bin/circleci-job-chain'
+export * from './lib/poller'

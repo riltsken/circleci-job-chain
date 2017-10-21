@@ -2,15 +2,15 @@ import 'mocha'
 import * as nock from 'nock'
 import * as chai from 'chai'
 import * as chaiAsPromised from 'chai-as-promised'
+import { expect } from 'chai'
 
 chai.should()
 chai.use(chaiAsPromised)
 nock.disableNetConnect()
-const timeout = 500
 
-import { CircleApi } from '../../index'
+import { poller } from '../../index'
 
-describe('CircleApi', () => {
+describe('poller', () => {
   let nockScope: nock.Scope
 
   beforeEach(() => {
@@ -18,31 +18,40 @@ describe('CircleApi', () => {
     nockScope = nock('https://circleci.com').log(console.log)
   })
 
-  it('calls the circleci api to create a build and gets a response', async () => {
-    nockScope.matchHeader('Content-Type', 'application/json')
-             .matchHeader('User-Agent', 'circleci-job-chain')
-             .matchHeader('Accept', 'application/json')
-             .post('/api/v1.1/project/github/org1/proj1/tree/master', {build_parameters: {}})
+  it('creates a build and polls for it to complete', async () => {
+    nockScope.post('/api/v1.1/project/github/org1/proj1/tree/master')
              .query({'circle-token': 'testtoken'})
-             .reply(200, {tests: 1})
+             .reply(200, {build_num: 123})
 
-    const api = new CircleApi('testtoken', timeout)
-    await api.createBuild('org1', 'proj1')
+    nockScope.get('/api/v1.1/project/github/org1/proj1/123')
+             .query({'circle-token': 'testtoken'})
+             .reply(200, {outcome: 'BUILDING'})
+
+    nockScope.get('/api/v1.1/project/github/org1/proj1/123')
+             .query({'circle-token': 'testtoken'})
+             .reply(200, {outcome: 'BUILDING'})
+
+    nockScope.get('/api/v1.1/project/github/org1/proj1/123')
+             .query({'circle-token': 'testtoken'})
+             .reply(200, {outcome: 'SUCCESS'})
+
+    let pollerExpectation
+    let onSuccess = () => {
+      pollerExpectation = 'buildSucceeded'
+    }
+    let onFailure = () => {
+      pollerExpectation = 'buildFailed'
+    }
+
+    const options = {
+      organization: 'org1',
+      project: 'proj1',
+      branch: 'testbranch',
+      circleToken: 'testtoken'
+    }
+    await poller(options, onSuccess, onFailure)
 
     nockScope.done()
-  })
-
-  it('calls the circleci api to get the status of a build and gets a response', async () => {
-    nockScope.matchHeader('Content-Type', 'application/json')
-             .matchHeader('User-Agent', 'circleci-job-chain')
-             .matchHeader('Accept', 'application/json')
-             .get('/api/v1.1/project/github/org1/proj1/123')
-             .query({'circle-token': 'testtoken'})
-             .reply(200, {tests: 1})
-
-    const api = new CircleApi('testtoken', timeout)
-    await api.getBuildDetails('org1', 'proj1', '123')
-
-    nockScope.done()
+    expect(pollerExpectation).to.equal('buildSucceeded')
   })
 })
