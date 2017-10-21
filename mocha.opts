@@ -1,0 +1,2 @@
+--require src/__test__/test.common.js
+--watch-extensions ts

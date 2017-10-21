@@ -9,9 +9,11 @@ enum RequestMethod {
 
 export class CircleApi {
   private token: string
+  private timeout: number
 
-  constructor (token: string) {
+  constructor (token: string, timeout = 5000) {
     this.token = token
+    this.timeout = timeout
   }
 
   /**
@@ -46,7 +48,8 @@ export class CircleApi {
         'User-Agent': 'circleci-job-chain',
         'Content-Type': 'application/json',
         'Accept': 'application/json'
-      }
+      },
+      timeout: this.timeout
     }
 
     if (method === RequestMethod.POST) {
