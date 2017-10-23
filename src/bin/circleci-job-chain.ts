@@ -9,7 +9,7 @@ let cliArgs = argv.demandOption(['organization','project','circle-token'])
 const options: IOptions = {
   organization: cliArgs.organization,
   project: cliArgs.project,
-  branch: cliArgs.branch,
+  branch: cliArgs.branch || 'master',
   circleToken: cliArgs ['circle-token'],
   pollInterval: cliArgs ['poll-interval'],
   buildOptions: cliArgs.buildOptions
