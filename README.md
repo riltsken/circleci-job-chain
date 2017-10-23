@@ -15,7 +15,7 @@ Options
 --project (required)
 --circle-token (required)
 --branch
---pollInterval
+--pollInterval (ms)
 --buildOptions
 ```
 
