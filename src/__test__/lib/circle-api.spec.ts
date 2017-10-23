@@ -38,7 +38,7 @@ describe('CircleApi', () => {
              .matchHeader('Accept', 'application/json')
              .post('/api/v1.1/project/github/org1/proj1/tree/master', {build_parameters: {TEST_PARAM: 'a parameter'}})
              .query({'circle-token': 'testtoken'})
-             .reply(200, {tests: 1})
+             .reply(200)
 
     const api = new CircleApi('testtoken', timeout)
     await api.createBuild('org1', 'proj1', {TEST_PARAM: 'a parameter'})
@@ -52,7 +52,7 @@ describe('CircleApi', () => {
              .matchHeader('Accept', 'application/json')
              .post('/api/v1.1/project/github/org1/proj1/tree/sweet-branch', {build_parameters: {}})
              .query({'circle-token': 'testtoken'})
-             .reply(200, {tests: 1})
+             .reply(200)
 
     const api = new CircleApi('testtoken', timeout)
     await api.createBuild('org1', 'proj1', {}, 'sweet-branch')
@@ -66,7 +66,7 @@ describe('CircleApi', () => {
              .matchHeader('Accept', 'application/json')
              .get('/api/v1.1/project/github/org1/proj1/123')
              .query({'circle-token': 'testtoken'})
-             .reply(200, {tests: 1})
+             .reply(200)
 
     const api = new CircleApi('testtoken', timeout)
     await api.getBuildDetails('org1', 'proj1', '123')
