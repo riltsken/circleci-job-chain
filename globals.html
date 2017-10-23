@@ -949,11 +949,13 @@ img { max-width: 100%; }
 			<p>This library is intended to be used from a circleci config rather than cloning the repo your want to run a task from.</p>
 			<h2 id="usage">Usage</h2>
 			<p><code>npm install -g circleci-job-chain</code>
-			<code>circleci-job-chain --organization --project --circle-token</code></p>
+			<code>circleci-job-chain --organization mygithuborg --project mygithubproject --circle-token mycircletoken</code></p>
 			<pre><code>Options
-
--<span class="ruby">-branch
-</span>-<span class="ruby">-pollInterval
+-<span class="ruby">-organization (required)
+</span>-<span class="ruby">-project (required)
+</span>-<span class="ruby">-circle-token (required)
+</span>-<span class="ruby">-branch
+</span>-<span class="ruby">-pollInterval (ms)
 </span>-<span class="ruby">-buildOptions</span>
 </code></pre><h2 id="pros-cons-using-this">Pros &amp; Cons using this</h2>
 			<p>Pros</p>
@@ -1021,7 +1023,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">BASE_<wbr>URL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"https://circleci.com/api/v1.1"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;https://circleci.com/api/v1.1&quot;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/bafb5ca/src/lib/circle-api.ts#L3">lib/circle-api.ts:3</a></li>
+						<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/e2f7636/src/lib/circle-api.ts#L3">lib/circle-api.ts:3</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1031,7 +1033,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">cli<wbr>Args<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Arguments</span><span class="tsd-signature-symbol"> =&nbsp;argv.demandOption([&#x27;organization&#x27;,&#x27;project&#x27;,&#x27;circle-token&#x27;]).argv</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/bafb5ca/src/bin/circleci-job-chain.ts#L6">bin/circleci-job-chain.ts:6</a></li>
+						<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/e2f7636/src/bin/circleci-job-chain.ts#L6">bin/circleci-job-chain.ts:6</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1041,7 +1043,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">500</span><span class="tsd-signature-symbol"> =&nbsp;500</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/bafb5ca/src/__test__/lib/circle-api.spec.ts#L9">__test__/lib/circle-api.spec.ts:9</a></li>
+						<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/e2f7636/src/__test__/lib/circle-api.spec.ts#L9">__test__/lib/circle-api.spec.ts:9</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1058,7 +1060,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/bafb5ca/src/lib/poller.ts#L18">lib/poller.ts:18</a></li>
+								<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/e2f7636/src/lib/poller.ts#L18">lib/poller.ts:18</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1084,7 +1086,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/bafb5ca/src/lib/poller.ts#L29">lib/poller.ts:29</a></li>
+								<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/e2f7636/src/lib/poller.ts#L29">lib/poller.ts:29</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1112,7 +1114,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/bafb5ca/src/bin/circleci-job-chain.ts#L9">bin/circleci-job-chain.ts:9</a></li>
+						<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/e2f7636/src/bin/circleci-job-chain.ts#L9">bin/circleci-job-chain.ts:9</a></li>
 					</ul>
 				</aside>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -1121,7 +1123,7 @@ img { max-width: 100%; }
 					<div class="tsd-signature tsd-kind-icon">branch<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;cliArgs.branch</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/bafb5ca/src/bin/circleci-job-chain.ts#L12">bin/circleci-job-chain.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/e2f7636/src/bin/circleci-job-chain.ts#L12">bin/circleci-job-chain.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1131,7 +1133,7 @@ img { max-width: 100%; }
 					<div class="tsd-signature tsd-kind-icon">build<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;cliArgs.buildOptions</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/bafb5ca/src/bin/circleci-job-chain.ts#L15">bin/circleci-job-chain.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/e2f7636/src/bin/circleci-job-chain.ts#L15">bin/circleci-job-chain.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1141,7 +1143,7 @@ img { max-width: 100%; }
 					<div class="tsd-signature tsd-kind-icon">circle<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;cliArgs [&#x27;circle-token&#x27;]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/bafb5ca/src/bin/circleci-job-chain.ts#L13">bin/circleci-job-chain.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/e2f7636/src/bin/circleci-job-chain.ts#L13">bin/circleci-job-chain.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1151,7 +1153,7 @@ img { max-width: 100%; }
 					<div class="tsd-signature tsd-kind-icon">organization<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;cliArgs.organization</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/bafb5ca/src/bin/circleci-job-chain.ts#L10">bin/circleci-job-chain.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/e2f7636/src/bin/circleci-job-chain.ts#L10">bin/circleci-job-chain.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1161,7 +1163,7 @@ img { max-width: 100%; }
 					<div class="tsd-signature tsd-kind-icon">poll<wbr>Interval<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;cliArgs [&#x27;poll-interval&#x27;]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/bafb5ca/src/bin/circleci-job-chain.ts#L14">bin/circleci-job-chain.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/e2f7636/src/bin/circleci-job-chain.ts#L14">bin/circleci-job-chain.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1171,7 +1173,7 @@ img { max-width: 100%; }
 					<div class="tsd-signature tsd-kind-icon">project<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;cliArgs.project</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/bafb5ca/src/bin/circleci-job-chain.ts#L11">bin/circleci-job-chain.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/e2f7636/src/bin/circleci-job-chain.ts#L11">bin/circleci-job-chain.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
