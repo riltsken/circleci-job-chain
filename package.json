@@ -6,7 +6,7 @@
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
   "bin": {
-    "circleci-job-chain": "./build/bin/circleci-job-chain"
+    "circleci-job-chain": "./build/main/bin/circleci-job-chain.js"
   },
   "repository": "https://github.com/riltsken/circleci-job-chain",
   "author": "Samuel Toriel <samueltoriel@gmail.com>",
