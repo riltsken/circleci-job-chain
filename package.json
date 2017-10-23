@@ -83,19 +83,6 @@
     "pipeline",
     "ci/cd"
   ],
-  "nyc": {
-    "exclude": [
-      "**/*.spec.js",
-      "build/browser/**"
-    ]
-  },
-  "ava": {
-    "source": [
-      "test/**/*.js",
-      "build/**/*.js",
-      "!build/**/*.spec.js"
-    ]
-  },
   "dependencies": {
     "got": "^7.1.0",
     "tslib": "^1.6.0",
