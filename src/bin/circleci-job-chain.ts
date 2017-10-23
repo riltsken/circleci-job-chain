@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { poller, IOptions } from '../lib/poller'
 import * as argv from 'yargs'
 

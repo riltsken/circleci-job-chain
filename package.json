@@ -1,10 +1,11 @@
 {
   "name": "circleci-job-chain",
-  "version": "1.4.2",
+  "version": "1.0.0",
   "description": "A client tool for chaining circleci jobs together and waiting for them to finish. Useful for things like automation testing.",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
+  "bin": { "circleci-job-chain": "./build/bin/circleci-job-chain" },
   "repository": "https://github.com/riltsken/circleci-job-chain",
   "author": "Samuel Toriel <samueltoriel@gmail.com>",
   "license": "MIT",
