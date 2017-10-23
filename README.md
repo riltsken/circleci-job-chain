@@ -6,8 +6,13 @@ This library is intended to be used from a circleci config rather than cloning t
 
 ## Usage
 
-`npm install -g circleci-job-chain`
-```circleci-job-chain --organization mygithuborg --project mygithubproject --circle-token mycircletoken```
+```
+npm install -g circleci-job-chain
+
+circleci-job-chain --organization mygithuborg \
+                   --project mygithubproject \
+                   --circle-token mycircletoken
+```
 
 ```
 Options
