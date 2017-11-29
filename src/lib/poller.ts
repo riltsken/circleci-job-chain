@@ -46,6 +46,7 @@ export async function poller (options: IOptions,
   const body = JSON.parse(response.body)
   const buildId = body['build_num']
   console.log(`Job for "${options.project}" on branch "${options.branch}" started with build id "${buildId}".`)
+  console.log(`Job link: https://circleci.com/gh/${options.organization}/${options.project}/${buildId}`)
   setInterval(async function poll () {
     console.log(`Getting build details.`)
     let response
