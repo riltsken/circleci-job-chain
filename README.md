@@ -24,6 +24,18 @@ Options
 --buildOptions
 ```
 
+`--buildOptions` uses yargs https://github.com/yargs/yargs/blob/master/docs/tricks.md#objects
+
+Example
+```
+--buildOptions.TEST_TASK='testMapping'
+
+results in
+{
+  TEST_TASK: 'testMapping'
+}
+```
+
 ## Pros & Cons using this
 
 Pros
