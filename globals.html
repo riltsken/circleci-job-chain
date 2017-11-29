@@ -960,6 +960,14 @@ circleci-job-<span class="hljs-keyword">chain</span> <span class="hljs-comment">
 </span>-<span class="ruby">-branch
 </span>-<span class="ruby">-pollInterval (ms)
 </span>-<span class="ruby">-buildOptions</span>
+</code></pre><p><code>--buildOptions</code> uses yargs <a href="https://github.com/yargs/yargs/blob/master/docs/tricks.md#objects">https://github.com/yargs/yargs/blob/master/docs/tricks.md#objects</a></p>
+			<p>Example</p>
+			<pre><code>--buildOptions.TEST_TASK=<span class="hljs-string">'testMapping'</span>
+
+results <span class="hljs-keyword">in</span>
+{
+  TEST_TASK: <span class="hljs-string">'testMapping'</span>
+}
 </code></pre><h2 id="pros-cons-using-this">Pros &amp; Cons using this</h2>
 			<p>Pros</p>
 			<ul>
@@ -1026,7 +1034,7 @@ circleci-job-<span class="hljs-keyword">chain</span> <span class="hljs-comment">
 				<div class="tsd-signature tsd-kind-icon">BASE_<wbr>URL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"https://circleci.com/api/v1.1"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;https://circleci.com/api/v1.1&quot;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/3c72d79/src/lib/circle-api.ts#L3">lib/circle-api.ts:3</a></li>
+						<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/6f07703/src/lib/circle-api.ts#L3">lib/circle-api.ts:3</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1036,7 +1044,7 @@ circleci-job-<span class="hljs-keyword">chain</span> <span class="hljs-comment">
 				<div class="tsd-signature tsd-kind-icon">cli<wbr>Args<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Arguments</span><span class="tsd-signature-symbol"> =&nbsp;argv.demandOption([&#x27;organization&#x27;,&#x27;project&#x27;,&#x27;circle-token&#x27;]).argv</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/3c72d79/src/bin/circleci-job-chain.ts#L6">bin/circleci-job-chain.ts:6</a></li>
+						<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/6f07703/src/bin/circleci-job-chain.ts#L6">bin/circleci-job-chain.ts:6</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1046,7 +1054,7 @@ circleci-job-<span class="hljs-keyword">chain</span> <span class="hljs-comment">
 				<div class="tsd-signature tsd-kind-icon">timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">500</span><span class="tsd-signature-symbol"> =&nbsp;500</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/3c72d79/src/__test__/lib/circle-api.spec.ts#L9">__test__/lib/circle-api.spec.ts:9</a></li>
+						<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/6f07703/src/__test__/lib/circle-api.spec.ts#L9">__test__/lib/circle-api.spec.ts:9</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1063,7 +1071,7 @@ circleci-job-<span class="hljs-keyword">chain</span> <span class="hljs-comment">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/3c72d79/src/lib/poller.ts#L18">lib/poller.ts:18</a></li>
+								<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/6f07703/src/lib/poller.ts#L18">lib/poller.ts:18</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1089,7 +1097,7 @@ circleci-job-<span class="hljs-keyword">chain</span> <span class="hljs-comment">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/3c72d79/src/lib/poller.ts#L29">lib/poller.ts:29</a></li>
+								<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/6f07703/src/lib/poller.ts#L29">lib/poller.ts:29</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1117,7 +1125,7 @@ circleci-job-<span class="hljs-keyword">chain</span> <span class="hljs-comment">
 				<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/3c72d79/src/bin/circleci-job-chain.ts#L9">bin/circleci-job-chain.ts:9</a></li>
+						<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/6f07703/src/bin/circleci-job-chain.ts#L9">bin/circleci-job-chain.ts:9</a></li>
 					</ul>
 				</aside>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -1126,7 +1134,7 @@ circleci-job-<span class="hljs-keyword">chain</span> <span class="hljs-comment">
 					<div class="tsd-signature tsd-kind-icon">branch<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;cliArgs.branch || &#x27;master&#x27;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/3c72d79/src/bin/circleci-job-chain.ts#L12">bin/circleci-job-chain.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/6f07703/src/bin/circleci-job-chain.ts#L12">bin/circleci-job-chain.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1136,7 +1144,7 @@ circleci-job-<span class="hljs-keyword">chain</span> <span class="hljs-comment">
 					<div class="tsd-signature tsd-kind-icon">build<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;cliArgs.buildOptions</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/3c72d79/src/bin/circleci-job-chain.ts#L15">bin/circleci-job-chain.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/6f07703/src/bin/circleci-job-chain.ts#L15">bin/circleci-job-chain.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1146,7 +1154,7 @@ circleci-job-<span class="hljs-keyword">chain</span> <span class="hljs-comment">
 					<div class="tsd-signature tsd-kind-icon">circle<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;cliArgs [&#x27;circle-token&#x27;]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/3c72d79/src/bin/circleci-job-chain.ts#L13">bin/circleci-job-chain.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/6f07703/src/bin/circleci-job-chain.ts#L13">bin/circleci-job-chain.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1156,7 +1164,7 @@ circleci-job-<span class="hljs-keyword">chain</span> <span class="hljs-comment">
 					<div class="tsd-signature tsd-kind-icon">organization<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;cliArgs.organization</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/3c72d79/src/bin/circleci-job-chain.ts#L10">bin/circleci-job-chain.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/6f07703/src/bin/circleci-job-chain.ts#L10">bin/circleci-job-chain.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1166,7 +1174,7 @@ circleci-job-<span class="hljs-keyword">chain</span> <span class="hljs-comment">
 					<div class="tsd-signature tsd-kind-icon">poll<wbr>Interval<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;cliArgs [&#x27;poll-interval&#x27;]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/3c72d79/src/bin/circleci-job-chain.ts#L14">bin/circleci-job-chain.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/6f07703/src/bin/circleci-job-chain.ts#L14">bin/circleci-job-chain.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1176,7 +1184,7 @@ circleci-job-<span class="hljs-keyword">chain</span> <span class="hljs-comment">
 					<div class="tsd-signature tsd-kind-icon">project<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;cliArgs.project</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/3c72d79/src/bin/circleci-job-chain.ts#L11">bin/circleci-job-chain.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/riltsken/circleci-job-chain/blob/6f07703/src/bin/circleci-job-chain.ts#L11">bin/circleci-job-chain.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
