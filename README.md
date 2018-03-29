@@ -22,6 +22,7 @@ Options
 --branch
 --pollInterval (ms)
 --buildOptions
+--errorThreshold
 ```
 
 `--buildOptions` uses yargs https://github.com/yargs/yargs/blob/master/docs/tricks.md#objects

@@ -7,6 +7,7 @@ export interface IOptions {
   circleToken: string
   pollInterval?: string
   buildOptions?: any
+  errorThreshold: number
 }
 
 export enum BuildOutcome {
@@ -15,7 +16,7 @@ export enum BuildOutcome {
   CANCELED = 'canceled'
 }
 
-export function handleError (error: any, onFailure: Function) {
+export function handleError (error: any, onFailure: Function = () => { return }) {
   if (error && error.statusCode) {
     console.log('**Something went wrong talking to CircleCI API. Exiting.**')
     console.log(error.url)
@@ -29,6 +30,7 @@ export function handleError (error: any, onFailure: Function) {
 export async function poller (options: IOptions,
                               onSuccess: Function = () => { process.exit(0) },
                               onFailure: Function = () => { process.exit(1) }) {
+  let buildDetailErrorCount = 0
   const api = new CircleApi(options.circleToken)
   console.log(`Starting job for "${options.project}" on branch "${options.branch}".`)
   let response
@@ -54,7 +56,12 @@ export async function poller (options: IOptions,
     try {
       response = await api.getBuildDetails(options.organization, options.project, buildId)
     } catch (e) {
-      handleError(e, onFailure)
+      buildDetailErrorCount++
+      if (buildDetailErrorCount <= options.errorThreshold) {
+        handleError(e)
+      } else {
+        handleError(e, onFailure)
+      }
       return
     }
 
