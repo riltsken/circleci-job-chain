@@ -12,7 +12,8 @@ const options: IOptions = {
   branch: cliArgs.branch || 'master',
   circleToken: cliArgs ['circle-token'],
   pollInterval: cliArgs ['poll-interval'],
-  buildOptions: cliArgs.buildOptions
+  buildOptions: cliArgs.buildOptions,
+  errorThreshold: cliArgs.errorThreshold || 5
 }
 
 poller(options).catch(console.log)

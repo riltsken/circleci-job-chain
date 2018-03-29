@@ -50,7 +50,8 @@ describe('poller', () => {
       project: 'proj1',
       branch: 'testbranch',
       circleToken: 'testtoken',
-      pollInterval: '100'
+      pollInterval: '100',
+      errorThreshold: 5
     }
     await poller(options, onSuccess, onFailure).catch(console.log)
 
